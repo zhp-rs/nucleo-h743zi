@@ -1,0 +1,18 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Openocd Debug",
+            "cwd": "${workspaceRoot}",
+            "executable": "${workspaceRoot}/target/thumbv7em-none-eabihf/debug/tri_led",
+            "request": "launch",
+            "type": "cortex-debug",
+            "servertype": "openocd",
+            "configFiles": [
+                "debug/openocd.cfg",
+            ],
+            "svdFile": "debug/STM32H7x3.svd",
+            "preLaunchTask": "build for debug",
+        }
+    ]
+}
