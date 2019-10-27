@@ -10,7 +10,6 @@ use cortex_m_rt::entry;
 use stm32h7xx_hal::hal::digital::v2::ToggleableOutputPin;
 use stm32h7xx_hal::{pac, prelude::*};
 
-
 #[entry]
 fn main() -> ! {
     let cp = cortex_m::Peripherals::take().unwrap();
@@ -29,20 +28,14 @@ fn main() -> ! {
     let mut blue = gpiob.pb7.into_push_pull_output();
     let mut yellow = gpiob.pb0.into_push_pull_output();
 
-
     loop {
-        loop {
-            red.toggle().unwrap();
-            delay.delay_ms(500_u16);
+        red.toggle().unwrap();
+        delay.delay_ms(500_u16);
 
+        blue.toggle().unwrap();
+        delay.delay_ms(500_u16);
 
-            blue.toggle().unwrap();
-            delay.delay_ms(500_u16);
-
-
-            yellow.toggle().unwrap();
-            delay.delay_ms(500_u16);
-
-        }
+        yellow.toggle().unwrap();
+        delay.delay_ms(500_u16);
     }
 }

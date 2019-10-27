@@ -27,11 +27,9 @@ fn main() -> ! {
     let mut delay = cp.SYST.delay(ccdr.clocks);
 
     loop {
-        loop {
-            red.set_high().unwrap();
-            delay.delay_ms(500_u16);
-            red.set_low().unwrap();
-            delay.delay_ms(500_u16);
-        }
+        red.set_high().unwrap();
+        delay.delay_ms(500_u16);
+        red.set_low().unwrap();
+        delay.delay_ms(500_u16);
     }
 }
