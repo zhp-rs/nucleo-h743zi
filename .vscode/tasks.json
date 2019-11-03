@@ -12,6 +12,25 @@
                 "kind": "build",
                 "isDefault": true
             }
+        },
+        {
+            "label": "build for bin",
+            "type": "shell",
+            "command": "cargo objcopy --release --bin tri_led -- -O binary led.bin",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        },
+        // Only fow Windows
+        {
+            "label": "stlink tool flash",
+            "type": "shell",
+            // "command": "ST-LINK_CLI -ME -p led.bin 0x08000000 -Rst -HardRst",
+            "command": "ST-LINK_CLI -p led.bin 0x08000000 -Rst",
+            "dependsOn": "build for bin",
+            "problemMatcher": []
         }
     ]
 }
