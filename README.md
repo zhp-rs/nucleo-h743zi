@@ -16,5 +16,13 @@ cargo run --bin tri_led
 3. generate binary
 ```bash
 cargo objcopy --release --bin tri_led -- -O binary led.bin
+```
+# download use stlink command tool
+```bash
 ST-LINK_CLI.exe -p led.bin 0x08000000 -Rst # Windows
 ```
+# download use pyocd
+```bash
+ pyocd flash --pack ~/.local/share/Keil.STM32H7xx_DFP.2.3.1.pack -t stm32h743zitx -f 4M -a 0x08000000 led.bin
+```
+
