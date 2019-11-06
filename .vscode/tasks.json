@@ -31,6 +31,21 @@
             "command": "ST-LINK_CLI -p led.bin 0x08000000 -Rst",
             "dependsOn": "build for bin",
             "problemMatcher": []
-        }
+        },
+        {
+            "label": "openocd flash",
+            "type": "shell",
+            "command": "openocd",
+            "args": [
+                "-f","${workspaceRoot}/debug/openocd.cfg",
+                "-c", "init",
+                "-c", "halt",
+                "-c", "flash write_image erase ${workspaceRoot}/led.bin 0x08000000",
+                "-c", "reset",
+                "-c", "shutdown",
+            ],
+            "dependsOn": "build for bin",
+            "problemMatcher": []
+        },
     ]
 }
