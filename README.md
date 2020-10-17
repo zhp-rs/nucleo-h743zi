@@ -13,7 +13,11 @@ openocd -f debug/openocd.cfg
 cargo run --bin tri_led
 ```
 2. cortex debug
-3. generate binary
+3. cargo flash
+```bash
+cargo flash --bin led
+```
+4. generate binary
 ```bash
 cargo objcopy --release --bin tri_led -- -O binary led.bin
 ```
