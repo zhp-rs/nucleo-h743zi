@@ -35,7 +35,7 @@
         {
             "label": "openocd flash",
             "type": "shell",
-            "command": "openocd",
+            "command": "openocd-zephyr",
             "args": [
                 "-f","${workspaceRoot}/debug/openocd.cfg",
                 "-c", "init",

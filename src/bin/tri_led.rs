@@ -31,11 +31,14 @@ fn main() -> ! {
     loop {
         red.toggle().unwrap();
         delay.delay_ms(500_u16);
+        red.toggle().unwrap();
 
         blue.toggle().unwrap();
         delay.delay_ms(500_u16);
+        blue.toggle().unwrap();
 
         yellow.toggle().unwrap();
         delay.delay_ms(500_u16);
+        yellow.toggle().unwrap();
     }
 }
